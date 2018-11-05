@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/assets/stylesheets/style.css">
+<h1>New Game</h1>
+  <p><% @letters.each do |letter| %>
+  <%= letter %>
+  <% end %></p>
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <p>Quel est le plus long mots que tu puisses écrire?</p>
+  <input type="text" name="longuest_word" placeholder="Ecris un mot">
+  <input type="submit">
+</form>
